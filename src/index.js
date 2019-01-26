@@ -18,7 +18,7 @@ export function getUserRating(user) {
   }
 
   if (user.membershipLevel !== 'free') {
-    if (user.membershipLevel === 'gld') {
+    if (user.membershipLevel === 'go1d') {
       rating += 3;
     }
   
