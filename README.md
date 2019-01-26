@@ -2,9 +2,15 @@
 
 ## Setup 
 
-`npm install`
+```bash
+npm install
+```
 
-To run the test watcher, run `npm t` 
+To run the test watcher, run
+
+```bash
+npm t
+``` 
 
 --- 
 
@@ -52,11 +58,10 @@ A user's rating will start at 0 initially and will increase _or_ decrease based 
 
 Demonstrate your skills of TDD and refactoring the following ways, in what you feel is the _most_ important order, via the following:
 
-- Find ways to refactor
+- Spot any code smells and find ways to refactor
 - Based off the requirements, get method `getUserRating` under test
-- Spot any code smells
 - Fix any issues found during TDD
-- Implement new features
+- Implement new feature
 
 #### New Feature
 - 1 extra point is awarded for every 10 games a user has played
