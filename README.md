@@ -56,7 +56,7 @@ A user's rating will start at 0 initially and will increase _or_ decrease based 
 
 ## Goals 
 
-Demonstrate your skills of TDD and refactoring the following ways, in what you feel is the _most_ important order, via the following:
+Demonstrate your skills of TDD and refactoring by completing the following items in what you feel is the _most_ important order:
 
 - Spot any code smells and find ways to refactor
 - Based off the requirements, get method `getUserRating` under test
