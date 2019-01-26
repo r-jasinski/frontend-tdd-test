@@ -32,7 +32,7 @@ Chess has a function `getUserRating` that determines a user's rating based off m
 }
 ```
 
-A user's rating will start at 0 initially and will increase _or_ decrease based off the following rules:
+A user's rating will start at 0 initially and will increase _or_ decrease based off the following rules implemented in the `getUserRating` method:
 
 #### User Longevity (yearsActive)
 - A user gets 1 point per years active
@@ -61,7 +61,4 @@ Demonstrate your skills of TDD and refactoring by completing the following items
 - Spot any code smells and find ways to refactor
 - Based off the requirements, get method `getUserRating` under test
 - Fix any issues found during TDD
-- Implement new feature
-
-#### New Feature
-- 1 extra point is awarded for every 10 games a user has played
+- Implement a new feature where 1 extra point is awarded for every 10 games a user has played
