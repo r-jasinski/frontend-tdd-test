@@ -36,7 +36,7 @@ A user's rating will start at 0 initially and will increase _or_ decrease based 
 
 #### User Longevity (yearsActive)
 - A user gets 1 point per years active
-- Every 5 years, a user gets two additional points
+- Every 5 years, a user gets 2 additional points
   - 5 years would accrue 7 points
   - 15 years would accrue 21 points
 
@@ -50,9 +50,27 @@ A user's rating will start at 0 initially and will increase _or_ decrease based 
 - 3 points per won game
 - 1 point per draw
 - -1 point per lost game
-- -2 points per forfeited game
+- -2 points per forfeited game **UNLESS** a user has a _gold_ membership, in which they lose **0** points
 
 --- 
+
+Based off the above criteria and the given user, this method call should return `getUserRating` a total rating of `6`.
+
+```js
+const userRating = getUserRating({
+  username: 'chessman',
+  yearsActive: 1, // 1 point
+  membershipLevel: 'silver', // 2 points
+  games: {
+    won: 1, // 3 points
+    forfeited: 1, // -2 points
+    lost: 3, // -3 points
+    draw: 5, // 5 points
+  }
+});
+```
+
+---
 
 ## Goals 
 

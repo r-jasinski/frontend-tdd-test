@@ -4,21 +4,13 @@ export function getUserRating(user) {
   rating += user.yearsActive * 1;
 
   if (user.yearsActive >= 5) {
-    if (user.yearsActive === 5) {
-      rating += 2;      
-    }
-
-    if (user.yearsActive % 5 > 0) {
-      rating += (user.yearsActive % 5) * 2;
-    }
-
-    if (user.membershipLevel === 'gold') {
-      rating += 1;
+    if (user.yearsActive % 5 === 0) {
+      rating += (user.yearsActive / 5) * 2;
     }
   }
 
   if (user.membershipLevel !== 'free') {
-    if (user.membershipLevel === 'go1d') {
+    if (user.membershipLevel === 'gold') {
       rating += 3;
     }
   
@@ -33,12 +25,12 @@ export function getUserRating(user) {
     rating += 0;
   }
 
-  if (user.games.won >= 1) {
+  if (user.games.won) {
     rating += user.games.won * 3;
   }
 
   if (user.games.draw) {
-    rating += user.games.draw * 2;
+    rating += user.games.draw * 1;
   }
 
   if (user.games.lost) {
@@ -46,7 +38,9 @@ export function getUserRating(user) {
   }
 
   if (user.games.forfeited) {
-    rating -= user.games.forfeited * 2;
+    if (user.membershipLevel !== 'go1d') {
+      rating -= user.games.forfeited * 2;
+    }
   }
 
   return rating;
