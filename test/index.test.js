@@ -4,7 +4,7 @@ import { getUserRating } from '../src/index';
 // games won, lost, draw
 const createUser = (user = {}, games = {}) => {
   return Object.assign({
-    username: 'drew',
+    username: 'chessman',
     yearsActive: 0,
     membershipLevel: 'free', // bronze, silver, gold
   },
@@ -20,30 +20,39 @@ const createUser = (user = {}, games = {}) => {
 }
 
 describe('getUserRating', () => {
-  it('should return 0 if the user has no games, yearsActive, and has free membership', () => {
-    const user = createUser();
-
-    expect(getUserRating(user)).toEqual(0);
+  describe('Default functionality', () => {
+    it('should return 0 if the user has no games, yearsActive, and has free membership', () => {
+      const user = createUser();
+  
+      expect(getUserRating(user)).toEqual(0);
+    });
   });
 
-  it('a user should get 1 point for the first year active', () => {
-    const user = createUser({
-      yearsActive: 1,
+  describe('test score based on yearsActive', () => {
+    it('a user should get 1 point for the first year active', () => {
+      const user = createUser({
+        yearsActive: 1,
+      });
+  
+      expect(getUserRating(user)).toEqual(1);
     });
-
-    expect(getUserRating(user)).toEqual(1);
   });
 
   // membership status
-  it('should return 1 point for a user with a bronze membership', () => {
-    const user = createUser({
-      membershipLevel: 'bronze',
+  describe('test score based on membershipLevel', () => {
+    it('should return 1 point for a user with a bronze membership', () => {
+      const user = createUser({
+        membershipLevel: 'bronze',
+      });
+       
+      expect(getUserRating(user)).toEqual(1);
     });
-     
-    expect(getUserRating(user)).toEqual(1);
   });
+  
 
-  // games
+  describe('test score based on games', () => {
+    // TODO: write tests to score based on user's games
+  });
   
   // new feature
   it.skip('give 1 extra point per 10 games played', () => {

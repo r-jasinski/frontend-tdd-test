@@ -82,3 +82,5 @@ During your interview, demonstrate your skills of TDD (Test Driven Development) 
 - Implement a new feature where 1 extra point is awarded for every 10 games a user has played
 
 Keep in mind that the goal is _not_ to finish this problem, but to give you a chance to demonstrate your approach and thinking.
+
+**Hint:** Your logic is does not have to be limited to the `getUserRating` method.
