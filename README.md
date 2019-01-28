@@ -16,7 +16,7 @@ npm t
 
 ## Introduction
 
-Chess has a function `getUserRating` that determines a user's rating based off multiple factors. Here is what a user object looks like:
+Chess has a function `getUserRating` that determines a user's rating, calculated from the user object, which has this form::
 
 ```js
 {
