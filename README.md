@@ -1,4 +1,4 @@
-# Chess FE Refactor & Testing Challenge
+# Chess Front End Refactor & Testing Challenge
 
 ## Setup 
 
