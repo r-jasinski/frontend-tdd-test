@@ -60,8 +60,8 @@ describe('getUserRating', () => {
       won: 3, // 9 points
       lost: 1, // -1 point 
       draw: 6, // + 6
-    });
+    }); // + 1 for 10 games
      
-    expect(getUserRating(user)).toBe(24);
+    expect(getUserRating(user)).toBe(15);
   });
 });
