@@ -74,9 +74,11 @@ const userRating = getUserRating({
 
 ## Goals 
 
-Demonstrate your skills of TDD and refactoring by completing the following items in what you feel is the _most_ important order:
+During your interview, demonstrate your skills of TDD (Test Driven Development) and refactoring the by completing the following items in what you feel is the _most_ important order:
 
 - Spot any code smells and find ways to refactor
 - Based off the requirements, get method `getUserRating` under test
 - Fix any issues found during TDD
 - Implement a new feature where 1 extra point is awarded for every 10 games a user has played
+
+Keep in mind that the goal is _not_ to finish this problem, but to give you a chance to demonstrate your approach and thinking.
