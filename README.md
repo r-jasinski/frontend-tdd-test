@@ -38,7 +38,7 @@ A user's rating will start at 0 initially and will increase _or_ decrease based 
 - A user gets 1 point per years active
 - Every 5 years, a user gets 2 additional points
   - 5 years would accrue 7 points
-  - 15 years would accrue 21 points
+  - 17 years would accrue 21 points
 
 #### Membership Level (membershipLevel)
 - 3 points for gold membership
