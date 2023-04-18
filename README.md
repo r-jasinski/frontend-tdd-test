@@ -1,6 +1,6 @@
 # Chess Front End Refactor & Testing Challenge
 
-## Setup 
+## Setup
 
 ```bash
 npm install
@@ -10,15 +10,15 @@ To run the test watcher, run
 
 ```bash
 npm t
-``` 
+```
 
---- 
+---
 
 ## Introduction
 
-Chess has a function `getUserRating` that determines a user's rating, calculated from the user object, which has this form::
+Chess has a function `getUserRating` that determines a user's rating, calculated from the user object, which has this form:
 
-```js
+```ts
 {
   username: 'chessman',
   yearsActive: 0,
@@ -52,11 +52,11 @@ A user's rating will start at 0 initially and will increase _or_ decrease based 
 - -1 point per lost game
 - -2 points per forfeited game **UNLESS** a user has a _gold_ membership, in which they lose **0** points
 
---- 
+---
 
 Based off the above criteria and the given user, this method call should return `getUserRating` a total rating of `6`.
 
-```js
+```ts
 const userRating = getUserRating({
   username: 'chessman',
   yearsActive: 1, // 1 point
@@ -72,7 +72,7 @@ const userRating = getUserRating({
 
 ---
 
-## Goals 
+## Goals
 
 During your interview, demonstrate your skills of TDD (Test Driven Development) and refactoring the by completing the following items in what you feel is the _most_ important order:
 
