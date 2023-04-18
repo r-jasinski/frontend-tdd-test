@@ -23,7 +23,7 @@ describe('getUserRating', () => {
   describe('Default functionality', () => {
     it('should return 0 if the user has no games, yearsActive, and has free membership', () => {
       const user = createUser();
-  
+
       expect(getUserRating(user)).toEqual(0);
     });
   });
@@ -33,7 +33,7 @@ describe('getUserRating', () => {
       const user = createUser({
         yearsActive: 1,
       });
-  
+
       expect(getUserRating(user)).toEqual(1);
     });
   });
@@ -44,24 +44,24 @@ describe('getUserRating', () => {
       const user = createUser({
         membershipLevel: 'bronze',
       });
-       
+
       expect(getUserRating(user)).toEqual(1);
     });
   });
-  
+
 
   describe('test score based on games', () => {
     // TODO: write tests to score based on user's games
   });
-  
+
   // new feature
   it.skip('give 1 extra point per 10 games played', () => {
     const user = createUser({}, {
       won: 3, // 9 points
-      lost: 1, // -1 point 
+      lost: 1, // -1 point
       draw: 6, // + 6
     }); // + 1 for 10 games
-     
+
     expect(getUserRating(user)).toBe(15);
   });
 });
