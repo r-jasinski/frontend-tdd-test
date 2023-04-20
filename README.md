@@ -77,7 +77,7 @@ const userRating = getUserRating({
 During your interview, demonstrate your skills of TDD (Test Driven Development) and refactoring the by completing the following items in what you feel is the _most_ important order:
 
 - Spot any code smells and find ways to refactor
-- Based off the requirements, get method `getUserRating` under test
+- Based off the requirements, get method `getUserRating` under test coverage
 - Fix any issues found during TDD
 - Implement a new feature where 1 extra point is awarded for every 10 games a user has played
 

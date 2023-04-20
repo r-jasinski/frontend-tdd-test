@@ -1,8 +1,9 @@
 import { getUserRating } from '../src/index';
+import { Games, User } from '../src/types';
 
 // create a user with years an an active player
 // games won, lost, draw
-const createUser = (user = {}, games = {}) => {
+const createUser = (user: Partial<User> = {}, games: Games = {}) => {
   return Object.assign({
     username: 'chessman',
     yearsActive: 0,

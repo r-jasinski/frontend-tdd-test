@@ -1,6 +1,8 @@
-export function getUserRating(user) {
+import { User } from './types';
+
+export function getUserRating(user: User) {
   let rating = 0;
-  
+
   rating += user.yearsActive * 1;
 
   if (user.yearsActive >= 5) {
@@ -13,14 +15,14 @@ export function getUserRating(user) {
     if (user.membershipLevel === 'gold') {
       rating += 3;
     }
-  
+
     if (user.membershipLevel === 'silver') {
       rating += 2;
     }
-  
+
     if (user.membershipLevel === 'bronze') {
       rating += 1;
-    }  
+    }
   } else {
     rating += 0;
   }
