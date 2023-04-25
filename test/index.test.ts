@@ -1,9 +1,11 @@
 import { getUserRating } from '../src/index';
-import { Games, User } from '../src/types';
+import { User } from '../src/types';
 
 // create a user with years an an active player
 // games won, lost, draw
-const createUser = (user: Partial<User> = {}, games: Games = {}) => {
+const createUser = (user: Partial<User> = {}) => {
+  const games = user.games || {};
+
   return Object.assign({
     username: 'chessman',
     yearsActive: 0,
@@ -57,10 +59,12 @@ describe('getUserRating', () => {
 
   // new feature
   it.skip('give 1 extra point per 10 games played', () => {
-    const user = createUser({}, {
-      won: 3, // 9 points
-      lost: 1, // -1 point
-      draw: 6, // + 6
+    const user = createUser({
+      games: {
+        won: 3, // 9 points
+        lost: 1, // -1 point
+        draw: 6, // + 6
+      }
     }); // + 1 for 10 games
 
     expect(getUserRating(user)).toBe(15);
