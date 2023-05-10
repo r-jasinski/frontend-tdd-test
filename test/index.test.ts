@@ -1,8 +1,6 @@
 import { getUserRating } from '../src/index';
 import { User } from '../src/types';
 
-// create a user with years an an active player
-// games won, lost, draw
 const createUser = (user: Partial<User> = {}) => {
   const games = user.games || {};
 
