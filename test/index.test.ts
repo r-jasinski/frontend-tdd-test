@@ -5,7 +5,6 @@ const createUser = (user: Partial<User> = {}) => {
   const games = user.games || {};
 
   return Object.assign({
-    username: 'chessman',
     yearsActive: 0,
     membershipLevel: 'free', // bronze, silver, gold
   },
