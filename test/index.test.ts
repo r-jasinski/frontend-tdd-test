@@ -29,7 +29,7 @@ describe('getUserRating', () => {
   });
 
   describe('test score based on yearsActive', () => {
-    it('a user should get 1 point for the. first year active', () => {
+    it('a user should get 1 point for the first year active', () => {
       const user = createUser({
         yearsActive: 1,
       });
