@@ -5,7 +5,6 @@ const createUser = (user: Partial<User> = {}) => {
   const games = user.games || {};
 
   return Object.assign({
-    username: 'chessman',
     yearsActive: 0,
     membershipLevel: 'free', // bronze, silver, gold
   },
@@ -30,7 +29,7 @@ describe('getUserRating', () => {
   });
 
   describe('test score based on yearsActive', () => {
-    it('a user should get 1 point for the first year active', () => {
+    it('a user should get 1 point for the. first year active', () => {
       const user = createUser({
         yearsActive: 1,
       });

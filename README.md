@@ -20,7 +20,6 @@ Chess has a function `getUserRating` that determines a user's rating, calculated
 
 ```ts
 {
-  username: 'chessman',
   yearsActive: 0,
   membershipLevel: 'free', // could be 'free', 'bronze', 'silver', and 'gold'
   games: {
@@ -58,7 +57,6 @@ Based off the above criteria and the given user, this method call should return 
 
 ```ts
 const userRating = getUserRating({
-  username: 'chessman',
   yearsActive: 1, // 1 point
   membershipLevel: 'silver', // 2 points
   games: {
