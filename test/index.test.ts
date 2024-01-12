@@ -101,9 +101,13 @@ describe('getUserRating', () => {
       const user = createUser({ games: { forfeited: 0 } });
       expect(getUserRating(user, pointRules)).toEqual(0);
     });
-    it('should return -2 if the user has 1 forfeited games', () => {
+    it('should return -2 if the user has 1 forfeited game', () => {
       const user = createUser({ games: { forfeited: 1 } });
       expect(getUserRating(user, pointRules)).toEqual(-2);
+    });
+    it('should return 3 if the user has 1 forfeited game and gold membership', () => {
+      const user = createUser({ membershipLevel: 'gold', games: { forfeited: 1 } });
+      expect(getUserRating(user, pointRules)).toEqual(3);
     });
     it('should return 0 if the user has no lost games', () => {
       const user = createUser({ games: { lost: 0 } });
