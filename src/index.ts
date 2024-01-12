@@ -1,49 +1,23 @@
-import { User } from './types';
+import { createUser } from '../test/index.test';
+import { PointRules, User } from './types';
 
-export function getUserRating(user: User) {
-  let rating = 0;
+export const pointRules = {
+  perYearActive: { one: 1, five: 2 },
+  perMembershipLevel: { free: 0, bronze: 1, silver: 2, gold: 3 },
+  perGames: { won: 3, draw: 1, lost: -1, forfeited: -2, played: { ten: 1 } }
+} as const
 
-  rating += user.yearsActive * 1;
-
-  if (user.yearsActive >= 5) {
-    if (user.yearsActive % 5 === 0) {
-      rating += (user.yearsActive / 5) * 2;
-    }
+export function getUserRating(user: User = createUser(), rules: PointRules) {
+  const userPoints = {
+    onePoints: user.yearsActive * rules.perYearActive.one,
+    fivePoints: Math.floor(user.yearsActive / 5) * rules.perYearActive.five,
+    membershipPoints: rules.perMembershipLevel[user.membershipLevel],
+    gameWonPoints: (user.games.won ?? 0) * rules.perGames.won,
+    gameDrawPoints: (user.games.draw ?? 0) * rules.perGames.draw,
+    gameLostPoints: (user.games.lost ?? 0) * rules.perGames.lost,
+    gameForfeitedPoints: (user.games.forfeited ?? 0) * rules.perGames.forfeited,
+    gamePlayedPoints: Math.floor(Object.values(user.games).reduce((acc, item) => acc + item) / 10) * rules.perGames.played.ten,
   }
-
-  if (user.membershipLevel !== 'free') {
-    if (user.membershipLevel === 'gold') {
-      rating += 3;
-    }
-
-    if (user.membershipLevel === 'silver') {
-      rating += 2;
-    }
-
-    if (user.membershipLevel === 'bronze') {
-      rating += 1;
-    }
-  } else {
-    rating += 0;
-  }
-
-  if (user.games.won) {
-    rating += user.games.won * 3;
-  }
-
-  if (user.games.draw) {
-    rating += user.games.draw * 1;
-  }
-
-  if (user.games.lost) {
-    rating -= user.games.lost * 1;
-  }
-
-  if (user.games.forfeited) {
-    if (user.membershipLevel !== 'go1d') {
-      rating -= user.games.forfeited * 2;
-    }
-  }
-
-  return rating;
+  const totalPoints = Object.values(userPoints).reduce((acc, item) => acc + item)
+  return totalPoints
 }
